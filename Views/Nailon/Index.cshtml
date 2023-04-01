@@ -1,0 +1,33 @@
+@using nailon.Entities
+@model List<Category>
+
+@{
+    ViewData["Title"] = "List of category";
+}
+
+<h2 class="title">@ViewData["Title"]</h2>
+
+<a href="nailon/Create" class="btn opacity text-white mb-3">Add Category</a>
+
+<table class="table table-bordered table">
+    <thead>
+        <tr >
+            <th>ID</th>
+            <th>Name</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>
+                    <a href="@Url.Action("Update", "nailon", new { id = item.Id })" class="btn btn-sm update text-white me-2">Update</a>
+                    <a href="@Url.Action("Delete", "nailon", new { id = item.Id })" class="btn btn-sm delete text-white">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

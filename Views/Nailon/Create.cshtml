@@ -1,0 +1,17 @@
+@{
+    ViewData["Title"] = "Create Category";
+}
+
+<div class="container">
+    <h2 class="title">@ViewData["Title"]</h2>
+
+    <form method="post" style="width: 50%;">
+        <div class="form-group">
+            <label for="nameInput" class="name">Name:</label>
+            <input id="nameInput" name="name" type="text" class="form-control input">
+        </div>
+        <button type="submit" class="btn add">Add Category</button>
+        <a type="button" href="@Url.Action("Index", "Category")" class="btn danger mb-3">Cancel</a>
+
+    </form>
+</div>
